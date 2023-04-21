@@ -49,26 +49,28 @@ const SinglePost = () => {
   
   
   return (
-    <div>
+   
+    <div className="bg-gradient-to-br from-orange-400 to-pink-400   flex flex-col justify-center items-center px-2 py-4">
+    <div className="bg-white rounded-lg shadow-lg p-8 w-full sm:w-2/3 md:w-1/2 lg:w-1/3">
       {isLoading ? (
         <div>Loading...</div>
       ) : (
-        <div>
-          
-          <h2>{post?.title}</h2>
-          <img src={post?.photo} alt={post?.title} />
-          <p>{post?.text}</p>
-          <p>{post?.createdAt.slice(0,10)} {
-            post?.createdAt.slice(11,16)
-          }</p>
-      <div>
-      <Likes postId={post?._id} userId={post?.userId} />
-      <Comments postId={post?._id} userId={post?.userId}/>
+        <div className="flex flex-col gap-4">
+          <h2 className="text-3xl font-bold">{post?.title}</h2>
+          <img className="w-full" src={post?.photo} alt={post?.title} />
+          <p className="text-lg">{post?.text}</p>
+          <p className="text-gray-500">
+            {post?.createdAt.slice(0, 10)} {post?.createdAt.slice(11, 16)}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Likes postId={post?._id} userId={post?.userId} />
+            <Comments postId={post?._id} userId={post?.userId} />
+          </div>
+        </div>
+      )}
     </div>
-    </div>
- 
-  )}
   </div>
+  
   )
 }
 export default SinglePost

@@ -95,6 +95,11 @@ const SingleUserProfile = () => {
                   alt={post.title}
                   className="w-full object-cover rounded-lg"
                 />
+                <button
+                    className="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition-colors duration-200 mt-4"
+                    onClick={() => navigate(`/user/singlepost/${post._id}`)}
+
+                >See post</button>
               </div>
             ))}
           </div>
