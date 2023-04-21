@@ -98,6 +98,9 @@ const SingleUserProfile = () => {
               </div>
             ))}
           </div>
+          {
+                posts.length === 0 && <h1 className="text-2xl font-bold text-center">No Posts Jet</h1>
+          }
         </div>
       </div>
     </div>
