@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Login, Welcome, Profile, Post, Friends, AllPosts, CreatePost, EditPost, AllUsers, SinglePost } from "./pages";
+import { Login, Welcome, Profile, Post, Friends, AllPosts, CreatePost, EditPost, AllUsers, SinglePost, SingleUserProfile } from "./pages";
 import { useState } from "react";
 import { UserContext } from "./context/UserContext";
 import { LikesContext } from "./context/LikesConext";
@@ -40,6 +40,7 @@ function App() {
           <Route path="/user/editpost/:id" element={<EditPost />} />
           <Route path="/user/singlepost/:id" element={<SinglePost />} />
           <Route path="/user/friends" element={<Friends />} />
+          <Route path="/user/singleuserprofile/:id" element={<SingleUserProfile />} />
           <Route path="/posts" element={<AllPosts />} />
           <Route path="/users" element={<AllUsers />} />
         </Routes>
